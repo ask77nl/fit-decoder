@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ask77nl/fit-parser.git"
+    "url": "git+https://github.com/ask77nl/fit-decoder.git"
   },
   "keywords": [
     "fit",
@@ -28,9 +28,9 @@
   "private": false,
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ask77nl/fit-parser/issues"
+    "url": "https://github.com/ask77nl/fit-decoder/issues"
   },
-  "homepage": "https://github.com/ask77nl/fit-parser#readme",
+  "homepage": "https://github.com/ask77nl/fit-decoder#readme",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.13.1",
