@@ -1,0 +1,45 @@
+{
+  "name": "fit-decoder",
+  "version": "1.0.0",
+  "description": "Javascript library for parsing ANT/Garmin .FIT files",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "nyc npm run test:unit",
+    "test:unit": "mocha --recursive test",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ask77nl/fit-parser.git"
+  },
+  "keywords": [
+    "fit",
+    "ant",
+    "garmin",
+    "parse"
+  ],
+  "author": "Serguei Alleko",
+  "maintainers": [
+    {
+      "email": "ask@alleko.com",
+      "name": "Serguei Alleko"
+    }
+  ],
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ask77nl/fit-parser/issues"
+  },
+  "homepage": "https://github.com/ask77nl/fit-parser#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^4.5.0"
+  }
+}
