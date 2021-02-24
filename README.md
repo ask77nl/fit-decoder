@@ -1,5 +1,4 @@
 # fit-decoder
-===============
 
 Javascript library for parsing ANT/Garmin `.FIT` files desinged to help developers to deal with complexities of FIT binary format. It's a small zero-dependency unopinionated library. 
 Supports Node.js and browser environments.
@@ -19,7 +18,6 @@ $ npm install -s fit-decoder
 const fitDecoder = require('fit-decoder');
 
 // fit2json expects binary represetnation in FIT format as ArrayBuffer
-//
 // You can get it by reading a file in Node:
 
 const fs = require('fs').promises;
@@ -31,12 +29,13 @@ const awsRequest = await s3.getObject({ Bucket: 'fit', Key: 'activity.fit' }).pr
 const buffer = awsRequest.Body.buffer;
 
 
-// fit2json converts binary FIT into a raw JSON representation. No record names, types or values are parsed.
-// useful for low level data analysis
+// fit2json converts binary FIT into a raw JSON representation. No record names, types or values 
+// are parsed. It is useful for low level data analysis
 const jsonRaw = fitDecoder.fit2json(buffer);
 
-// parseRecords converts raw JSON format into readable format using current Global FIT Profile (SDK 21.47.00)
-// it performs simple conversions for some data formats like time, distance, coordinates.
+// parseRecords converts raw JSON format into readable format using current 
+// Global FIT Profile (SDK 21.47.00)
+// It also performs simple conversions for some data formats like time, distance, coordinates.
 const json = fitDecoder.parseRecords(jsonRaw);
 
 
@@ -55,9 +54,9 @@ const powerOverTime = fitDecoder.getValueOverTime(json, 'record', 'power');
 ## Documentation
 ### fit2json(ArrayBuffer)
 
-fit2json designed to simpliy convert binary FIT data representation into more easy-to-deal JSON format. It doesn't do any 
-opinionated parsing. Data stored as is, record and field names are left in numeric format. No data is removed. Illegal fields
-are left as is. Developer data field names are not updated.
+fit2json designed to simpliy convert binary FIT data representation into more easy-to-deal JSON format. 
+It doesn't do any opinionated parsing. Data stored as is, record and field names are left in numeric 
+format. No data is removed. Illegal fields are left as is. Developer data field names are not updated.
 
 This is an example of a record after the conversion:
 
@@ -83,10 +82,11 @@ This is an example of a record after the conversion:
 
 
 ###parseRecords(json, options)
-FIT format uses FIT Profiles to convey the meaning of data. This libaray can parse the FIT data using current Global FIT Profile.
-The Global FIT Profile is maintained by Garmin Canada Inc and it's distributed as a XLSX file in [FIT SDK](https://www.thisisant.com/developer/resources/downloads/)
+FIT format uses FIT Profiles to convey the meaning of data. This libaray can parse the FIT data 
+using current Global FIT Profile. The Global FIT Profile is maintained by Garmin Canada Inc
+and it's distributed as an XLSX file in [FIT SDK](https://www.thisisant.com/developer/resources/downloads/)
 
-parseRecords converts raw JSON representation result from fit2json and creates readable records like this:
+`parseRecords` converts raw JSON representation result from fit2json and creates readable records like this:
 
 ```
 {
