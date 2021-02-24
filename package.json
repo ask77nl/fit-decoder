@@ -1,6 +1,6 @@
 {
   "name": "fit-decoder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript library for parsing ANT/Garmin .FIT files",
   "main": "dist/index.js",
   "scripts": {
