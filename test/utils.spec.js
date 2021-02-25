@@ -51,9 +51,9 @@ describe('/src/utils', () => {
         ],
       };
       expect(utils.getValueOverTime(json, 'record', 'heart_rate')).to.deep.equal([
-        'Sun Jun 21 2020 07:19:56 GMT-0400 (Eastern Daylight Time),60',
-        'Sun Jun 21 2020 07:19:57 GMT-0400 (Eastern Daylight Time),61',
-        'Sun Jun 21 2020 07:19:58 GMT-0400 (Eastern Daylight Time),62',
+        `${new Date('2020-06-21T11:19:56.000Z')},60`,
+        `${new Date('2020-06-21T11:19:57.000Z')},61`,
+        `${new Date('2020-06-21T11:19:58.000Z')},62`,
       ]);
     });
   });
