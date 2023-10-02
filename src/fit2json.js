@@ -1,4 +1,12 @@
 const constants = require('./constants');
+const { StringDecoder } = require('node:string_decoder');
+
+/**
+ * Parses the buffer as a UTF-8 string.
+ */
+function decodeString(buffer) {
+  return new StringDecoder('utf8').end(Buffer.from(buffer));
+}
 
 /**
  * Parses one record of a FIT file
@@ -169,7 +177,7 @@ function readDataField (baseType, fit, pointer, size, littleEndian) {
           result.push(fit.getUint8(pointer + i));
         }
       }
-      return String.fromCharCode(...result);
+      return decodeString(result);
   }
 }
 
