@@ -116,6 +116,13 @@ describe('/src/fit2json', () => {
       const result = fit2json.readDataField(0x07, fit, 0, 6, false);
       expect(result).to.equal('string');
     });
+
+    it('should decode the string base type (0x07) as UTF-8', () => {
+      const fit = new DataView(new Uint8Array([0xf0, 0x9f, 0x92, 0xaa]).buffer);
+      const result = fit2json.readDataField(0x07, fit, 0, 4, false);
+      expect(result).to.equal('\uD83D\uDCAA');
+    });
+
     it('should read a byte base type (0x0D) in big endian notation', () => {
       const fit = new DataView(new Uint8Array([115,116,114,105,110,103]).buffer);
       const result = fit2json.readDataField(0x0D, fit, 0, 6, false);
